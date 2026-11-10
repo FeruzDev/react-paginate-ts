@@ -1,5 +1,11 @@
 # react-paginate-ts
 
+[![npm version](https://img.shields.io/npm/v/react-paginate-ts.svg)](https://www.npmjs.com/package/react-paginate-ts)
+[![npm downloads](https://img.shields.io/npm/dm/react-paginate-ts.svg)](https://www.npmjs.com/package/react-paginate-ts)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/react-paginate-ts)](https://bundlephobia.com/package/react-paginate-ts)
+[![CI](https://github.com/FeruzDev/react-paginate-ts/actions/workflows/ci.yml/badge.svg)](https://github.com/FeruzDev/react-paginate-ts/actions/workflows/ci.yml)
+[![license](https://img.shields.io/npm/l/react-paginate-ts.svg)](./LICENSE)
+
 Lightweight, accessible and fully typed **pagination** for React — a ready-to-use `<Pagination />` component plus a headless `usePagination` hook.
 
 - ⚛️ React 16.8+ (works with 17, 18 and 19)
@@ -151,6 +157,21 @@ MIT
 
 ## Releasing (maintainers)
 
-1. Bump the version: `npm version patch` (or `minor` / `major`) — creates a commit and a `vX.Y.Z` tag.
+1. Bump the version: `npm version patch` (or `minor` / `major`) - creates a commit and a `vX.Y.Z` tag.
 2. Push with tags: `git push --follow-tags`.
-3. The **Release** GitHub Action runs tests, builds and publishes to npm using the `NPM_TOKEN` repository secret.
+3. The **Release** GitHub Action runs type checks, tests and the build, then publishes to npm via [Trusted Publishing](https://docs.npmjs.com/trusted-publishers) (OIDC, no npm token stored anywhere) with provenance.
+
+## Development
+
+```bash
+npm install
+npm test          # jest
+npm run typecheck # tsc
+npm run build     # tsup -> dist/
+```
+
+Open `example/index.html` through any static server (e.g. `npx http-server .`) after building to try the demo.
+
+## Contributing
+
+Issues and pull requests are welcome at [github.com/FeruzDev/react-paginate-ts](https://github.com/FeruzDev/react-paginate-ts).

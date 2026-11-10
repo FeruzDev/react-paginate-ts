@@ -25,10 +25,11 @@ jobs:
           if [ "$VERSION" != "$GITHUB_REF_NAME" ]; then
             echo "Tag $GITHUB_REF_NAME does not match package.json version $VERSION"; exit 1
           fi
+      - name: Use npm 11 (required for trusted publishing)
+        run: npm install -g npm@11
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+      # Authenticates via npm Trusted Publishing (OIDC) - no token needed.
       - run: npm publish --provenance --access public --ignore-scripts
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
