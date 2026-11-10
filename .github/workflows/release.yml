@@ -31,5 +31,7 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
-      # Authenticates via npm Trusted Publishing (OIDC) - no token needed.
+      # Uses npm Trusted Publishing (OIDC) when configured; otherwise falls back to the NPM_TOKEN secret.
       - run: npm publish --provenance --access public --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -155,7 +155,7 @@ There is also a pure helper `getPageRange(page, totalPages, siblingCount?, bound
 
 1. Bump the version: `npm version patch` (or `minor` / `major`) - creates a commit and a `vX.Y.Z` tag.
 2. Push with tags: `git push --follow-tags`.
-3. The **Release** GitHub Action runs type checks, tests and the build, then publishes to npm via [Trusted Publishing](https://docs.npmjs.com/trusted-publishers) (OIDC, no npm token stored anywhere) with provenance.
+3. The **Release** GitHub Action runs type checks, tests and the build, then publishes to npm with provenance, using [Trusted Publishing](https://docs.npmjs.com/trusted-publishers) (OIDC) or the `NPM_TOKEN` repository secret.
 
 ## Development
 
