@@ -1,0 +1,114 @@
+/* Default theme. Override any variable on `.rp-pagination` or a parent element. */
+.rp-pagination {
+  --rp-color: #1f2937;
+  --rp-bg: transparent;
+  --rp-border: #d1d5db;
+  --rp-hover-bg: #f3f4f6;
+  --rp-active-color: #ffffff;
+  --rp-active-bg: #2563eb;
+  --rp-active-border: #2563eb;
+  --rp-focus-ring: rgba(37, 99, 235, 0.45);
+  --rp-disabled-opacity: 0.45;
+  --rp-gap: 4px;
+  --rp-radius: 6px;
+  --rp-size: 36px;
+  --rp-font-size: 14px;
+  --rp-font-family: inherit;
+
+  font-family: var(--rp-font-family);
+}
+
+.rp-pagination--sm {
+  --rp-size: 28px;
+  --rp-font-size: 13px;
+}
+
+.rp-pagination--lg {
+  --rp-size: 44px;
+  --rp-font-size: 16px;
+}
+
+.rp-pagination--circular {
+  --rp-radius: 999px;
+}
+
+.rp-pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--rp-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rp-pagination__item,
+.rp-pagination__ellipsis {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--rp-size);
+  height: var(--rp-size);
+  padding: 0 8px;
+  font-size: var(--rp-font-size);
+  line-height: 1;
+  color: var(--rp-color);
+}
+
+.rp-pagination__item {
+  font-family: inherit;
+  background: var(--rp-bg);
+  border: 1px solid transparent;
+  border-radius: var(--rp-radius);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.rp-pagination--outlined .rp-pagination__item {
+  border-color: var(--rp-border);
+}
+
+.rp-pagination--filled .rp-pagination__item {
+  background: var(--rp-hover-bg);
+}
+
+.rp-pagination__item:hover:not(:disabled):not(.rp-pagination__item--selected) {
+  background: var(--rp-hover-bg);
+}
+
+.rp-pagination--filled .rp-pagination__item:hover:not(:disabled):not(.rp-pagination__item--selected) {
+  border-color: var(--rp-border);
+}
+
+.rp-pagination__item:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--rp-focus-ring);
+}
+
+.rp-pagination__item--selected {
+  color: var(--rp-active-color);
+  background: var(--rp-active-bg);
+  border-color: var(--rp-active-border);
+  cursor: default;
+}
+
+.rp-pagination--filled .rp-pagination__item--selected {
+  background: var(--rp-active-bg);
+}
+
+.rp-pagination__item:disabled {
+  opacity: var(--rp-disabled-opacity);
+  cursor: not-allowed;
+}
+
+/* Opt-in dark theme: <Pagination data-theme="dark" /> or any ancestor with data-theme="dark". */
+[data-theme='dark'] .rp-pagination,
+.rp-pagination[data-theme='dark'] {
+  --rp-color: #e5e7eb;
+  --rp-border: #4b5563;
+  --rp-hover-bg: #374151;
+  --rp-active-bg: #3b82f6;
+  --rp-active-border: #3b82f6;
+}
