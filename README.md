@@ -148,3 +148,9 @@ There is also a pure helper `getPageRange(page, totalPages, siblingCount?, bound
 ## License
 
 MIT
+
+## Releasing (maintainers)
+
+1. Bump the version: `npm version patch` (or `minor` / `major`) — creates a commit and a `vX.Y.Z` tag.
+2. Push with tags: `git push --follow-tags`.
+3. The **Release** GitHub Action runs tests, builds and publishes to npm using the `NPM_TOKEN` repository secret.
