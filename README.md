@@ -151,10 +151,6 @@ Accepts the same options as the component (`totalPages`, `totalItems`, `pageSize
 
 There is also a pure helper `getPageRange(page, totalPages, siblingCount?, boundaryCount?)` returning e.g. `[1, 'start-ellipsis', 4, 5, 6, 'end-ellipsis', 10]`.
 
-## License
-
-MIT
-
 ## Releasing (maintainers)
 
 1. Bump the version: `npm version patch` (or `minor` / `major`) - creates a commit and a `vX.Y.Z` tag.
@@ -175,3 +171,7 @@ Open `example/index.html` through any static server (e.g. `npx http-server .`) a
 ## Contributing
 
 Issues and pull requests are welcome at [github.com/FeruzDev/react-paginate-ts](https://github.com/FeruzDev/react-paginate-ts).
+
+## License
+
+MIT
